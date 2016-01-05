@@ -18,5 +18,8 @@ class Step(models.Model):
     order = models.IntegerField(default=0)
     course = models.ForeignKey(Course)
 
+    class Meta:
+        ordering = ['order',]   #handles ordering
+
     def __str__(self):
         return ('{}: {}'.format(self.order, self.title))
