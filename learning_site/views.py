@@ -1,4 +1,6 @@
-from django.http import HttpResponse
+# from django.http import HttpResponse
 
-def hello_world(request):
-    return HttpResponse('Hello World')
+from django.shortcuts import render #changed to import render from import HttpResponse after adding template folder
+
+def home_page(request):
+    return render(request, 'home.html')

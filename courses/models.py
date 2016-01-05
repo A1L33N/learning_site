@@ -10,3 +10,13 @@ class Course(models.Model): #extend from base Model class
 
     def __str__(self): #to configure how python shell returns queries
         return self.title
+
+
+class Step(models.Model):
+    title = models.CharField(max_length = 255)
+    description = models.TextField()
+    order = models.IntegerField(default=0)
+    course = models.ForeignKey(Course)
+
+    def __str__(self):
+        return ('{}: {}'.format(self.order, self.title))

@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url #don't forget to import include!
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns #tells django/python how to serve static files
 
 from . import views #import views file
 
 urlpatterns = [
     url(r'^courses/', include('courses.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.hello_world), #takes 5 arguments(pattern, view to send request to, keyword argument for view, route name, prefix) #
+    url(r'^$', views.home_page), #takes 5 arguments(pattern, view to send request to, keyword argument for view, route name, prefix) #
 ]
+
+urlpatterns += staticfiles_urlpatterns()

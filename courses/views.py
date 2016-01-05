@@ -5,5 +5,4 @@ from .models import Course #imports from models.py
 # Create your views here.
 def course_list(request):
     courses = Course.objects.all() #selects all courses that exist
-    output = ', '.join([str(course) for course in courses]) #formats output of courses - in this case, a for loop inside a list?
-    return HttpResponse(output) #returns http response
+    return render(request, 'courses/course_list.html', {'courses': courses}) #takes 3 arguments - request, template to render, optional context dictionary
