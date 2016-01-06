@@ -1,6 +1,10 @@
 {% extends 'layout.html' %}
+{% load static from staticfiles %}
 
+<!-- add app specific css to static block in app templates -->
+{% block static %}<link rel="stylesheet" href="{% static 'courses/css/courses.css' %}"> {% endblock %}
 {% block title %} Available Courses {% endblock %}
+
 
 {% block content %}
 <div class="cards">
