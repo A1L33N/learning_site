@@ -20,7 +20,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns #tells djang
 from . import views #import views file
 
 urlpatterns = [
-    url(r'^courses/', include('courses.urls')),
+    url(r'^courses/', include('courses.urls', namespace='courses')), #include('courses.urls', namespace='course') to namespace a group of URLs
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home_page), #takes 5 arguments(pattern, view to send request to, keyword argument for view, route name, prefix) #
 ]

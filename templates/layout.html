@@ -8,6 +8,11 @@
   </head>
   <body>
     <div class="site-container">
+      <nav>
+        <a href="{% url 'views.home_page' %}">Home</a>
+        <!-- note use of namespaces in link below; {% url 'courses:list' %} to link to a named and namespaced URL -->
+        <a href="{%url 'courses:list'%}">Courses</a>
+      </nav>
       {% block content %} {% endblock %}
     </div>
 
